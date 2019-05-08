@@ -88,9 +88,18 @@ ArrayList로 생성하는 배열은 랜덤접근을 통해 인덱스를 바로 �
 - 마지막 위치의 값 삭제하는 기능
 #### get 
 - 선택한_위치의_값_가져오기
+#### size
+#### indexOf
+- 동일한 값을 가진 인덱스 가져오기
 ### etc
 - toString 구현
 - 테스트 코드 작성
+
+#### Iterator 패턴 구현 in ArrayList
+- next()
+- hasNext()
+- previous()
+- hasPrevious()
 
 배열크기를 정해주었을 때 그 크기를 넘으면 에러가 난다.  
 `java.lang.ArrayIndexOutOfBoundsException`  

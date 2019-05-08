@@ -58,6 +58,17 @@ public class ArrayList<E> {
         return size;
     }
 
+    // 동일한 값을 가진 인덱스 가져오기
+    public int indexOf(Object o) {
+        for (int i = 0; i < size; i++) {
+            if (o.equals(elementData[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
     public String toString() {
         String str = "[";
         for (int i = 0; i < size; i++) {
@@ -71,4 +82,36 @@ public class ArrayList<E> {
 
     /*테스트를 위한 getter*/
     public Object getelementData(int size) {return elementData[size];}
+
+
+
+    public ListIterator listIterator() {
+        return new ListIterator();
+    }
+
+    // Iterator 패턴 클래스
+    class ListIterator {
+
+        private int nextIndex = 0;
+
+        // Iterator패턴_순차적으로_다음_노드_값_리턴
+        public Object next() {
+            return elementData[nextIndex++];
+        }
+
+        // 다음 엘리먼트가 있는 지 검사
+        public boolean hasNext() {
+            return nextIndex < size();
+        }
+
+        // Iterator패턴_순차적으로_이전_노드_값_리턴
+        public Object previous() {
+            return elementData[--nextIndex];
+        }
+
+        // 이전 엘리먼트가 있는 지 검사
+        public boolean hasPrevious() {
+            return nextIndex > 0;
+        }
+    }
 }

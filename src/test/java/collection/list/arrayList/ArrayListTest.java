@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 @SpringBootTest
 // JUnit은 순서대로 테스트를 동작하지 않는다. NAME_ASCENDING은 메서드 이름순으로 테스트 된다.
@@ -115,6 +115,60 @@ public class ArrayListTest {
         assertEquals(5, list.size());
         assertEquals(30, list.get(2));
         System.out.println(list.get(2));
+    }
+
+    @Test
+    public void 동일한_값을_가진_인덱스_가져오기() {
+        ArrayList list = new ArrayList();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+        assertEquals(1, list.indexOf(20));
+        assertEquals(3, list.indexOf(40));
+        assertEquals(-1, list.indexOf(50));
+    }
+
+    @Test
+    public void Iterator패턴_순차적으로_다음_노드_값_리턴() {
+        ArrayList list = new ArrayList();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+
+        ArrayList.ListIterator li = list.listIterator();
+        int checkIndex = 0;
+        while (li.hasNext()) {
+            Object nextValue = li.next();
+            assertEquals(nextValue, list.get(checkIndex));
+            checkIndex++;
+            System.out.println(nextValue);
+        }
+        assertEquals(li.next(), null);
+    }
+
+    @Test
+    public void Iterator패턴_순차적으로_이전_노드_값_리턴() {
+        ArrayList list = new ArrayList();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+
+        ArrayList.ListIterator li = list.listIterator();
+        int checkIndex = 0;
+        while (li.hasNext()) {
+            li.next();
+            checkIndex++;
+        }
+
+        while (li.hasPrevious()) {
+            checkIndex--;
+            Object previousValue = li.previous();
+            assertEquals(previousValue, list.get(checkIndex));
+            System.out.println(previousValue);
+        }
     }
 
 }
