@@ -53,6 +53,11 @@ public class ArrayList<E> {
         return elementData[index];
     }
 
+    // 배열의 사이즈 가져오기
+    public int size() {
+        return size;
+    }
+
     public String toString() {
         String str = "[";
         for (int i = 0; i < size; i++) {
@@ -65,6 +70,5 @@ public class ArrayList<E> {
     }
 
     /*테스트를 위한 getter*/
-    public int size() {return size;}
     public Object getelementData(int size) {return elementData[size];}
 }
