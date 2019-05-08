@@ -65,6 +65,6 @@ public class ArrayList<E> {
     }
 
     /*테스트를 위한 getter*/
-    public int getSize() {return size;}
+    public int size() {return size;}
     public Object getelementData(int size) {return elementData[size];}
 }

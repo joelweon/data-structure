@@ -23,7 +23,7 @@ public class ArrayListTest {
         String oldValue = list.toString();
         list.addFirst(5);
         System.out.println(oldValue + " -> " + list);
-        assertEquals(5, list.getSize());
+        assertEquals(5, list.size());
         assertEquals(5, list.getelementData(0));
     }
 
@@ -37,7 +37,7 @@ public class ArrayListTest {
         list.add(40);
         System.out.println(oldValue + " -> " + list);
         // 크기 확인
-        assertEquals(3, list.getSize() - 1);
+        assertEquals(3, list.size() - 1);
         // 마지막 값 확인
         assertEquals(40, list.getelementData(3));
     }
@@ -52,7 +52,7 @@ public class ArrayListTest {
         String oldValue = list.toString();
         list.add(1, 15);
         System.out.println(oldValue + " -> " + list);
-        assertEquals(5, list.getSize());
+        assertEquals(5, list.size());
         assertEquals(15, list.getelementData(1));
     }
 
@@ -67,7 +67,7 @@ public class ArrayListTest {
         String oldValue = list.toString();
         Object removed = list.remove(1);
         System.out.println(oldValue + " -> " + list);
-        assertEquals(4, list.getSize());
+        assertEquals(4, list.size());
         assertEquals(30, list.getelementData(1));
         assertEquals(20, removed);
     }
@@ -83,7 +83,7 @@ public class ArrayListTest {
         String oldValue = list.toString();
         Object removed = list.removeFirst();
         System.out.println(oldValue + " -> " + list);
-        assertEquals(4, list.getSize());
+        assertEquals(4, list.size());
         assertEquals(30, list.getelementData(1));
         assertEquals(10, removed);
     }
@@ -99,7 +99,7 @@ public class ArrayListTest {
         String oldValue = list.toString();
         Object removed = list.removeLast();
         System.out.println(oldValue + " -> " + list);
-        assertEquals(4, list.getSize());
+        assertEquals(4, list.size());
         assertEquals(20, list.getelementData(1));
         assertEquals(50, removed);
     }
@@ -112,7 +112,7 @@ public class ArrayListTest {
         list.add(30);
         list.add(40);
         list.add(50);
-        assertEquals(5, list.getSize());
+        assertEquals(5, list.size());
         assertEquals(30, list.get(2));
         System.out.println(list.get(2));
     }
