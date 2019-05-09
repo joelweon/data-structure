@@ -171,4 +171,40 @@ public class ArrayListTest {
         }
     }
 
+    @Test
+    public void 원하는_위치에_엘리먼트_추가하기() {
+        ArrayList list = new ArrayList();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+
+        ArrayList.ListIterator li = list.listIterator();
+        while (li.hasNext()) {
+            int number = (int) li.next();
+            if (number == 30) {
+                li.add(35);
+            }
+        }
+        assertEquals(35,  list.get(3));
+    }
+    @Test
+    public void 엘리먼트_삭제하기() {
+        ArrayList list = new ArrayList();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+
+        ArrayList.ListIterator li = list.listIterator();
+        while (li.hasNext()) {
+            int number = (int) li.next();
+            if (number == 30) {
+                li.remove();
+            }
+        }
+        System.out.println(list);
+        assertEquals(40,  list.get(2));
+    }
+
 }

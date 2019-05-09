@@ -100,6 +100,8 @@ ArrayList로 생성하는 배열은 랜덤접근을 통해 인덱스를 바로 �
 - hasNext()
 - previous()
 - hasPrevious()
+- add()
+- remove()
 
 배열크기를 정해주었을 때 그 크기를 넘으면 에러가 난다.  
 `java.lang.ArrayIndexOutOfBoundsException`  

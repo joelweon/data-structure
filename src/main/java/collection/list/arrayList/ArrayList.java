@@ -113,5 +113,17 @@ public class ArrayList<E> {
         public boolean hasPrevious() {
             return nextIndex > 0;
         }
+
+        // 원하는_위치에_엘리먼트_추가하기
+        public Object add(E element) {
+            ArrayList.this.add(nextIndex++, element);
+            return element;
+        }
+
+        // 삭제하기
+        public void remove() {
+            ArrayList.this.remove(nextIndex - 1);
+            nextIndex--;
+        }
     }
 }
